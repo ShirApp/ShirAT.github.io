@@ -1,0 +1,202 @@
+/* ── Reset & base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --surface: #f6f8fa;
+  --border: #e1e4e8;
+  --text: #24292e;
+  --muted: #586069;
+  --accent: #0550ae;
+  --accent-hover: #033d8b;
+  --tag-bg: #ddf4ff;
+  --tag-text: #0550ae;
+  --max-width: 780px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; color: var(--accent-hover); }
+
+/* ── Header ── */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 2.5rem 1.5rem;
+  background: var(--surface);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.header-text h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.affiliation {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.header-links a {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.15s;
+}
+.header-links a:hover {
+  background: var(--border);
+  text-decoration: none;
+}
+
+/* ── Main ── */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.35rem;
+  margin-bottom: 1.1rem;
+  display: inline-block;
+}
+
+/* ── Research interests tags ── */
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tags li {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* ── Papers ── */
+.paper {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  margin-bottom: 1rem;
+}
+
+.paper-meta {
+  min-width: 3rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+.paper-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.paper-authors {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+.paper-venue {
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.paper-abstract {
+  font-size: 0.875rem;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.paper-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  color: var(--accent);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+.btn:hover {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .header-inner { flex-direction: column; align-items: flex-start; }
+  .paper { flex-direction: column; gap: 0.5rem; }
+  .paper-meta { min-width: auto; }
+}
