@@ -71,16 +71,21 @@ header {
 }
 
 .header-links a {
-  font-size: 0.875rem;
-  padding: 0.25rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
 .header-links a:hover {
-  background: var(--border);
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
   text-decoration: none;
 }
 
